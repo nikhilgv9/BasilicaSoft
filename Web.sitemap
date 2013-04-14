@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="/BasilicaSoft/Home.aspx" title="Home"  description="">
+    <siteMapNode roles="Admin,Trustee" url="" title="Admin">
+      <siteMapNode roles="*" url="/BasilicaSoft/FamilyRegistration.aspx" title="Register Family"  description="" />
+      <siteMapNode roles="*" url="/BasilicaSoft/EditPerson.aspx" title="Edit Person"  description="" />
+      <siteMapNode roles="*" url="/BasilicaSoft/CreateResources.aspx" title="Create Resources" description="" />
+      <siteMapNode roles="*" url="/BasilicaSoft/ApproveRequest.aspx" title="Approve Request" description="" />
+    </siteMapNode>
+
+    <siteMapNode roles ="Admin,Trustee" url="" title ="Trustee">
+      <siteMapNode roles="Admin,Trustee" url="/BasilicaSoft/CreateEvents.aspx" title ="Create Events" description =""/>
+      <siteMapNode roles="*" url="/BasilicaSoft/EditFamilyDetails.aspx" title="Edit Family"  description="" />
+      <siteMapNode roles="*" url="/BasilicaSoft/Add Announcement.aspx" title="Add Announcements"  description="" />
+    </siteMapNode>
+    
+    <siteMapNode roles="Admin,Parishioner" url="" title="Parishioner">
+      <siteMapNode roles="*" url="/BasilicaSoft/Announcements.aspx" title="Announcements"  description="" />
+      <siteMapNode roles="Admin,Parishioner" url="/BasilicaSoft/EditFamilyDetails.aspx?type=view" title="View Family"  description="" />
+      <siteMapNode roles="Parishioner" url="/BasilicaSoft/CreateRequest.aspx" title="Request Resources"  description="" />
+      <siteMapNode roles="Parishioner" url="/BasilicaSoft/ViewRequest.aspx" title="View Request"  description="" />
+      <siteMapNode roles="Admin,Parishioner" url="/BasilicaSoft/ViewEvents.aspx" title="View Events"  description="" />
+      <siteMapNode roles="Admin,Trustee" url="/BasilicaSoft/AddIncidents.aspx" title ="Add Incidents" description =""/>
+      <siteMapNode roles="Admin,Trustee" url="/BasilicaSoft/ViewIncident.aspx" title ="View Incident" description =""/>
+    </siteMapNode>
+
+
+  </siteMapNode>
+</siteMap>

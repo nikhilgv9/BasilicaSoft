@@ -1,0 +1,246 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head runat="server">
+    <title>Basilica Information Management</title>
+    <link href="scripts/main.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        div.maindiv {
+                font-size:13px
+            }
+        div.baloon{
+	        overflow:hidden;
+	        width:254px;
+	        background:url(images/baloon/blue_bal_center.png) repeat-y 100% 0;
+	        margin:14px 0 0 0;
+        }
+        div.baloon_top{
+	        overflow:hidden;
+	        width:254px;
+	        background:url(images/baloon/blue_bal_top.png) no-repeat 0 0;
+	        padding:9px 0 0 0;
+        }
+        div.baloon_bottom{
+	        overflow:hidden;
+	        width:254px;
+	        background:url(images/baloon/blue_bal_bottom.png) no-repeat 100% 100%;
+	        padding:0 0 8px 0;
+        }
+        div.baloon strong{
+	        overflow:hidden;
+	        background:url(images/baloon/img/house.gif) no-repeat 0 50%;
+	        font-size:12px;
+	        color:#fff;
+	        line-height:16px;
+	        padding:0 0 0 25px;
+	        margin:0 0 0 25px;
+        }
+        div.baloon ul{
+	        overflow:hidden;
+	        width:243px;
+	        margin:7px 0 0 11px;
+        }
+        div.baloon ul li{
+	        float:left;
+	        width:243px;
+	        line-height:16px;
+	        background:url(images/baloon/dotted_line.gif) no-repeat 22px 100%;
+	        margin:-1px 0 0 0;
+        }
+        div.baloon ul li.last{
+	        background:none;
+        }
+        div.baloon ul li a{
+	        float:left;
+	        width:241px;
+	        display:inline;
+	        color:#fff;
+	        padding:3px 0;
+	        cursor:pointer;
+	        margin:0 0 0 1px;
+        }
+        div.baloon ul li a:hover{
+	        background-color:#75c4d3;
+        }
+
+        div.baloon ul li a span{
+	        font-size:13px !important;	
+            width: 150px;
+	        float:left;
+	        background:url(images/baloon/christ.gif) no-repeat 0 7px;
+	        padding:0 0 0 12px;
+	        margin:0 0 0 27px;
+        }
+
+        div.baloon ul li a em{
+	        font-size:13px !important;
+	        float:right;
+	        color:#fff;
+	        font-style:normal;
+	        padding:0 25px 0 0;
+        }
+
+    /*Class for read only TextArea*/
+        .readOnlyTextArea {
+            color: #BBBBBB;
+            overflow: hidden;
+            outline-offset: 0px;
+            background-color: #242424;
+            border-color: #242424;
+            font-family: sans-serif, 'Microsoft Sans Serif';
+            resize: none;
+        }
+
+        .buttonlink {
+            margin-top:10px;
+            margin-right:10px;
+            color: #fdfbf5;
+        }
+
+    /*Classes for headings */
+    
+        .h1 {
+            font-size:25px;
+            margin: 0;
+            font-weight: normal;
+            color: #48ACDE;
+        }
+    
+        .h2 {
+            font-size:23px;
+            margin: 0;
+            font-weight: normal;
+            color: #48ACDE;
+        }
+    
+        .h3 {
+            font-size:20px;
+            margin: 0;
+            font-weight: normal;
+            color: #48ACDE;
+        }
+    
+        .h4 {
+            font-size:18px;
+            margin: 0;
+            font-weight: normal;
+            color: #48ACDE;
+        }
+    
+        .h5 {
+            font-size:16px;
+            margin: 0;
+            font-weight: normal;
+            color: #48ACDE;
+        }
+    
+        .h6 {
+            font-size:14px;
+            margin: 0;
+            font-weight: normal;
+            color: #48ACDE;
+        }
+
+         .bubble{
+    
+            border-radius: 5px;
+            box-shadow: 0px 0px 6px #000000;
+            padding: 30px;
+            background-color: #242424;
+        }
+        
+        .imagePanel{
+            width:900px;
+            margin-left:auto;          
+            margin-right:auto;
+        }
+        
+        .fullScreenDiv{
+            position: absolute;          
+            left: 0px;          
+            right:0;          
+            top: 0px;
+            width:1000px;
+            margin-left:auto;          
+            margin-right:auto;
+        }
+        
+</style>
+</head>
+<body>
+<form id="form1" runat="server">
+
+<div id="logo-wrap">
+<div id="logo">
+	<h1><a href="#">
+        <!--welcome message -->
+        <asp:Label ID="Label1" runat="server">
+        </asp:Label>
+     </a></h1>
+    <div style="float:right; height: 20px;">
+                <asp:LinkButton CssClass="buttonlink" ID="LogoutButton" runat="server" OnClick="LogoutButton_Click" 
+                    Font-Size="13px">Logout</asp:LinkButton>
+    </div>
+</div>   
+</div>
+
+<div id="header">
+    <div id="sitepathdiv">
+		 <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                </asp:SiteMapPath>
+     </div>
+</div>
+
+<div id="wrapper">
+<div id="wrapper-btm">
+<div id="page">
+	<!-- start content -->
+	<div id="content">
+        <div class="headerLogo"></div>
+		<div class="post">
+			<asp:Panel runat="server" ID="mainDiv" CssClass="maindiv">
+                    <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+                    </asp:contentplaceholder>
+                </asp:Panel>
+		</div>
+	</div>
+	<!-- end content -->
+	<!-- start sidebar -->
+	<div id="sidebar">
+		<ul>
+			<li id="search">
+				<asp:Image ID="Image1" runat="server" Width="150px" Height="160px" />
+			</li>			
+			<li>
+                    <asp:TreeView ID="TreeView1" runat="server" Width="152px" DataSourceID="SiteMapDataSource1" Font-Names="Microsoft Sans Serif" ForeColor="White">
+                    </asp:TreeView>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server">
+                    </asp:SiteMapDataSource>
+			</li>
+            <li>
+               <!-- <asp:Panel ID="PanelAnnouncementNotification" runat="server">
+							            <strong>Announcements</strong>
+			    </asp:Panel>-->
+            </li>
+		</ul>
+	</div>
+	<!-- end sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+</div>
+</div>
+<!-- start footer -->
+<div id="footer">
+	<div id="footer-wrap">
+	<p id="legal">(c) 2013 . Design by <a href="#">Nikhil George</a>.</p>
+	</div>
+</div>
+<!-- end footer -->
+     
+</form>
+</body>
+</html>
